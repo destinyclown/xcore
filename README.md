@@ -1,0 +1,2 @@
+# xcore
+XCore for .NET
