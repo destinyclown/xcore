@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1D1419E-4A77-4062-BD2D-62E692C39DAB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System</RootNamespace>
+    <AssemblyName>XCore</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\3.5\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\3.5\XCore.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>C:\DLL\Welin\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>C:\DLL\Welin\XCore.xml</DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+    <DefineConstants>V4</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiResult.cs" />
+    <Compile Include="Caching\ApplicationCache.cs" />
+    <Compile Include="Caching\CacheManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\IApplicationCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Caching\SysCache.cs" />
+    <Compile Include="Caching\IndexCache.cs" />
+    <Compile Include="cdb.cs" />
+    <Compile Include="cfgHelper.cs" />
+    <Compile Include="cvt.cs" />
+    <Compile Include="DataPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Cache\CacheObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Cache\MemoryDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DatabaseBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbChecker\AccessDatabaseChecker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbChecker\IDatabaseChecker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbChecker\MysqlDatabaseChecker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbChecker\SQLServerDatabaseChecker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbConst.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DbContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Dialect\AccessDialect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Dialect\IDatabaseDialect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Dialect\MysqlDialect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Dialect\SQLServerDialect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\EasyDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Enum\ConnectionItemType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Enum\DatabaseType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Enum\ParameterType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Factory\DataFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Factory\DbFactoryBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Factory\DbTypeChecker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Factory\MsSqlDbFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Factory\MysqlFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Factory\MysqlFactory_partial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Factory\OleDbFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Factory\OleDbFactory_partial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Factory\OracleFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Factory\OracleFactory_partial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\KeyValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Pager.cs" />
+    <Compile Include="Data\TableBuilder\AccessTableBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\TableBuilder\MySqlTableBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\TableBuilder\SqlServerTableBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\TableBuilder\TableBuilderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LBS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\Mvc\Attribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Rest.cs" />
+    <Compile Include="IO\XMLHelper.cs" />
+    <Compile Include="db.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DI\MapItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DI\ObjectContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDto.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IO\FileEx.cs" />
+    <Compile Include="IO\filesys.cs" />
+    <Compile Include="IO\LinuxPath.cs" />
+    <Compile Include="IO\PathTool.cs" />
+    <Compile Include="IO\WindownsPath.cs" />
+    <Compile Include="IO\Base64.cs" />
+    <Compile Include="IPageList.cs" />
+    <Compile Include="Lang\Lang.cs" />
+    <Compile Include="Lang\LanguageSetting.cs" />
+    <Compile Include="Log\FileLogger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\ILog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\ILogMsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\LogConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\LoggerForDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\LoggerUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\LogLevel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\LogManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\LogMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\LogMsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log\NullLogger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectBase.cs" />
+    <Compile Include="ORM\Attribute\CacheCountAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\ColumnAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\DatabaseAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\DateTimeAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\DecimalAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\DefaultAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\HtmlTextAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\ICacheAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\LabelAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\LongTextAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\MoneyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\NotSaveAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\NotSerializeAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\TableAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\TinyIntAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\Validation\EmailAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\Validation\NotNullAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\Validation\PatternAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\Validation\UniqueAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\Validation\ValidationAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Attribute\LongAttribute.cs" />
+    <Compile Include="ORM\Caching\ApplicationPool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Caching\CacheKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Caching\CacheTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Caching\ContextCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Caching\ContextPool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Caching\IObjectPool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Caching\ObjectPool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Caching\TimestampKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\CommonBase.cs" />
+    <Compile Include="ORM\EntityInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\EntityPropertyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\IInterceptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Includer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\MappingClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\MappingInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\MetaList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\NoCacheDbFinder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\ObjectDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\ObjectInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\ConditionInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\CountOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\DeleteOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\FindAllOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\FindByIdOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\FindByOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\FinderBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\FindPageOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\FindRelationOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\InsertOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\PageCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Operation\UpdateOperation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Page\ObjectPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Query.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\SqlBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Utils\CacheUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Utils\EntityPropertyUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Utils\FillUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Utils\OrmUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Utils\SqlUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Utils\ValueSetter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\Validator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ORM\xQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageList.cs" />
+    <Compile Include="PathHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\AccessorUtil.cs" />
+    <Compile Include="Reflection\CodeDomPropertyAccessor.cs" />
+    <Compile Include="Reflection\CodeRunner.cs" />
+    <Compile Include="Reflection\IAccessorUtil.cs" />
+    <Compile Include="Reflection\IConcreteFactory.cs" />
+    <Compile Include="Reflection\ILPropertyAccessor.cs" />
+    <Compile Include="Reflection\IPropertyAccessor.cs" />
+    <Compile Include="Reflection\OptimizeMode.cs" />
+    <Compile Include="Reflection\ReflectionUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reflection\rft.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegPattern.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="Runtime\Web.cs" />
+    <Compile Include="Serialization\JSON.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonParser\ArrayJsonParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonParser\CharSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonParser\InitJsonParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonParser\JsonParserBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonParser\JsonParserException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonParser\ObjectJsonParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonParser\StringJsonParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonParser\ValueJsonParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\SimpleJsonString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="strUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemplateEngine\Action.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemplateEngine\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemplateEngine\TeConfig.cs" />
+    <Compile Include="TemplateEngine\XCoreModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemplateEngine\TempInfo.cs" />
+    <Compile Include="Tree.cs" />
+    <Compile Include="UrlInfo.cs" />
+    <Compile Include="Encryptor.cs" />
+    <Compile Include="Web\Html.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\Jobs\IWebJobItem.cs" />
+    <Compile Include="Web\Jobs\WebJob.cs" />
+    <Compile Include="Web\Jobs\WebJobStarter.cs" />
+    <Compile Include="Web\AshxHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\CurrentRequest.cs" />
+    <Compile Include="System.cs" />
+    <Compile Include="Web\Mvc\ControllerExtend.cs" />
+    <Compile Include="Web\Mvc\PageMvc.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Mvc\Result.cs" />
+    <Compile Include="Web\PostAndGet.cs" />
+    <Compile Include="Web\Routing\LowerCaseUrlRoute.cs" />
+    <Compile Include="Web\Routing\LowerCaseUrlRouteMapHelper.cs" />
+    <Compile Include="Web\SystemInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\TemplateEngine.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\HttpImageHandler.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
+    <Content Include="更新日志.txt" />
+    <Content Include="注意事项.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /r /y $(TargetDir)XCore.dll $(SolutionDir)DLL\Framework3.5
+xcopy /r /y $(TargetDir)XCore.XML $(SolutionDir)DLL\Framework3.5</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
