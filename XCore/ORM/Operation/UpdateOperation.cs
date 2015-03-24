@@ -73,13 +73,13 @@ namespace System.ORM.Operation {
             builder.Append( "update " );
             builder.Append( entityInfo.TableName );
             builder.Append( " set " );
-
-            for (int i = 0; i < arrPropertyName.Length; i++) {
-                String columnName = entityInfo.GetColumnName( arrPropertyName[i] );
-                builder.Append( columnName );
-                builder.Append( "=" );
-                builder.Append( entityInfo.Dialect.GetParameter( columnName ) );
-                builder.Append( "," );
+            for (int i = 0; i < arrPropertyName.Length; i++)
+            {
+                String columnName = entityInfo.GetColumnName(arrPropertyName[i]);
+                builder.Append(columnName);
+                builder.Append("=");
+                builder.Append(entityInfo.Dialect.GetParameter(columnName));
+                builder.Append(",");
             }
             builder.Append( " where Id=" );
             builder.Append( entityInfo.Dialect.GetParameter( "Id" ) );

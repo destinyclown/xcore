@@ -249,8 +249,9 @@ namespace System.ORM {
         }
 
         internal void AddPropertyToHashtable( EntityPropertyInfo p ) {
-            _propertyHashTable[p.Name] = p;
-            if (strUtil.HasText( p.ColumnName )) {
+            _propertyHashTable[p.Name.ToLower()] = p;
+            if (strUtil.HasText(p.ColumnName))
+            {
                 _propertyHashTableByColumn[p.ColumnName.ToLower()] = p;
             }
         }
@@ -289,7 +290,7 @@ namespace System.ORM {
         /// <param name="propertyName"></param>
         /// <returns></returns>
         public EntityPropertyInfo GetProperty( String propertyName ) {
-            return (_propertyHashTable[propertyName] as EntityPropertyInfo);
+            return (_propertyHashTable[propertyName.ToLower()] as EntityPropertyInfo);
         }
 
         /// <summary>
@@ -298,11 +299,7 @@ namespace System.ORM {
         /// <param name="columnName"></param>
         /// <returns></returns>
         public EntityPropertyInfo GetPropertyByColumn( String columnName ) {
-            //if (columnName == "OrderRemarksNum")
-            //{
-            //    columnName = "OrderRemarksNum";
-            //}
-            return (_propertyHashTable[columnName] as EntityPropertyInfo);
+            return (_propertyHashTable[columnName.ToLower()] as EntityPropertyInfo);
         }
 
         /// <summary>

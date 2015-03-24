@@ -6,7 +6,7 @@
 using System;
 namespace System.Data {
     /// <summary>
-    /// XCenter ORM 支持的数据库类型
+    /// ORM 支持的数据库类型
     /// </summary>
     public enum DatabaseType {
         Access,
